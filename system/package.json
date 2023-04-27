@@ -1,0 +1,17 @@
+{
+  "name": "system",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "server": "nodemon --delay 1000ms ./src/app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  },
+  "dependencies": {
+    "json-server": "^0.17.3"
+  }
+}
