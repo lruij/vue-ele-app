@@ -1,0 +1,16 @@
+@import './base.css';
+@import './plugins.css';
+
+
+#app {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  --ele-header-main-background: linear-gradient(to right, rgb(53, 200, 250), rgb(31, 175, 243));
+  --ele-header-tag-background: rgba(242,242,242, 0.3);
+  --van-nav-bar-background: var(--ele-header-main-background);
+  --van-search-background: var(--ele-header-main-background);
+  --van-nav-bar-icon-color: white
+}
