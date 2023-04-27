@@ -1,0 +1,31 @@
+{
+  "name": "vue-ele-app",
+  "version": "1.0.0",
+  "description": "使用 vue3 实现的饿了么外卖 app",
+  "scripts": {
+    "lint-ui": "cd ui && npm run lint",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lruij/vue-ele-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lruij/vue-ele-app/issues"
+  },
+  "homepage": "https://github.com/lruij/vue-ele-app#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^17.6.1",
+    "@commitlint/config-conventional": "^17.6.1",
+    "cz-customizable": "^7.0.0",
+    "husky": "^8.0.0"
+  },
+  "config": {
+    "commitizen": {
+     "path": "node_modules/cz-customizable"
+    }
+  }
+}
