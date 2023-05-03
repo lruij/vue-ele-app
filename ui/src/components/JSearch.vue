@@ -1,5 +1,4 @@
 <script setup lang='ts'>
-import { Icon } from 'vant'
 
 interface IProps {
   showAction?: boolean
@@ -41,7 +40,7 @@ const onClear = () => {
     <div class="j-search__content" :class="shape ? `j-search__content--${shape}` : ''">
       <div class="j-cell j-search__field">
         <div class="j-field__left-icon">
-          <Icon name="search"  />
+          <VanIcon name="search"  />
         </div>
         <div class="j-cell__value">
           <div class="j-field__body">
@@ -50,7 +49,7 @@ const onClear = () => {
             <div class="j-field__right-icon" v-if="$slots['right-icon']">
               <slot name="right-icon"></slot>
             </div>
-            <Icon name="clear" class="j-field__clear-icon" v-else-if="modelValue" @click="onClear"></Icon>
+            <VanIcon name="clear" class="j-field__clear-icon" v-else-if="modelValue" @click="onClear"></VanIcon>
           </div>
         </div>
       </div>

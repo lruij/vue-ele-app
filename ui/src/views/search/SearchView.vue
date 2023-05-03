@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import JSearch from '@/components/JSearch.vue'
 import { ref, computed, watch } from 'vue'
-import { Icon } from 'vant'
 import { fetchSearchData } from '@/api/search'
 import type { ISearchResult } from '@/types'
 import { useToggle } from '@/use/useToggle'
@@ -38,7 +37,6 @@ const historyTags = computed(() => {
 })
 
 const onSearch = async (v?: string | number) => {
-  console.log(`search value: ${v}`)
 
   try {
     searchStatus.value = DOING
@@ -78,8 +76,8 @@ watch(debounceValue, (newVal) => {
           {{ item }}
         </div>
         <div class="history-tag" key="arrow" @click="toggleHistoryTags">
-          <Icon name="arrow-up" v-if="isHistoryTagShown" />
-          <Icon name="arrow-down" v-else />
+          <VanIcon name="arrow-up" v-if="isHistoryTagShown" />
+          <VanIcon name="arrow-down" v-else />
         </div>
       </TransitionGroup>
     </div>
@@ -87,7 +85,7 @@ watch(debounceValue, (newVal) => {
       <div class="searching" v-if="searchStatus == DOING">正在搜索中～</div>
       <template v-if="searchStatus == DONE">
         <div class="result-item" v-for="v in searchResult" :key="v.label">
-          <Icon name="search"></Icon>
+          <VanIcon name="search"></VanIcon>
           <div class="name">{{ v.label }}</div>
           <div class="count">约 {{ v.resultCount }} 个结果</div>
         </div>

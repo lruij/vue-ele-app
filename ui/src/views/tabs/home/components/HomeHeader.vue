@@ -1,6 +1,5 @@
 <script setup lang='ts'>
 import { ref } from 'vue'
-import { NavBar, Icon, Search, Tag } from 'vant'
 import type { ISearchRecomment } from '@/types'
 import JSearch from '@/components/JSearch.vue'
 
@@ -22,16 +21,16 @@ const searchValue = ref('test')
 
 <template>
   <div class="header">
-    <NavBar :border="false">
+    <VanNavBar :border="false">
       <template #left>
-        <Icon name="location-o" size="18" />
+        <VanIcon name="location-o" size="18" />
         <span>广州天河城二楼</span>
       </template>
       <template #right>
-        <Icon name="cart-o" size="18" />
-        <Icon name="comment-o" badge="9" size="18" />
+        <VanIcon name="cart-o" size="18" />
+        <VanIcon name="comment-o" badge="9" size="18" />
       </template>
-    </NavBar>
+    </VanNavBar>
     <!-- <Search shape="round" placeholder="奶茶 满35减8">
        <template #right-icon>
         <div>搜索</div>
@@ -43,7 +42,7 @@ const searchValue = ref('test')
       </template>
     </JSearch>
     <div class="header-recommend">
-      <Tag v-for="rec in recomments" :key="rec.value" round size="medium">{{ rec.label }}</Tag>
+      <VanTag v-for="rec in recomments" :key="rec.value" round size="medium">{{ rec.label }}</VanTag>
     </div>
   </div>
 </template>
