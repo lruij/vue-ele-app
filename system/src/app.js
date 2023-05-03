@@ -8,7 +8,7 @@ const server = jsonServer.create()
 
 // 配置静态资源目录
 const middleware = jsonServer.defaults({
-  static: path.join(__dirname, './public')
+  static: path.join(__dirname, '../public')
 })
 server.use(middleware)
 
