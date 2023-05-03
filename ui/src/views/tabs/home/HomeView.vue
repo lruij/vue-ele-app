@@ -1,11 +1,12 @@
 <script setup lang='ts'>
-import type { IHomeInfo } from '@/types'
+import type { IHomeInfo, ICountdown } from '@/types'
 import HomeHeader from './components/HomeHeader.vue'
 import SearchView from '@/views/search/SearchView.vue'
 import { useToggle } from '@/use/useToggle'
 import { useAsync } from '@/use/useAsync'
 import { fetchHomePageData } from '@/api/home'
 import JLoadingView from '@/components/JLoadingView.vue'
+import HomeTransformer from './components/HomeTransformer.vue'
 
 const recomments = [
   {
@@ -20,7 +21,14 @@ const recomments = [
 
 const [isSearchViewShown, toggleSearchView] = useToggle(false)
 
-const { data, pending}  = useAsync(fetchHomePageData, {} as IHomeInfo)
+const { data, pending}  = useAsync(fetchHomePageData, {
+  banner: [],
+  searchRecomments: [],
+  transformer: [],
+  scrollBarInfoList: [],
+  countdown: {} as ICountdown,
+  activities: [],
+} as IHomeInfo)
 
 
 </script>
@@ -32,7 +40,10 @@ const { data, pending}  = useAsync(fetchHomePageData, {} as IHomeInfo)
       <SearchView v-if="isSearchViewShown" @cancel="toggleSearchView"></SearchView>
     </Transition>
     <JLoadingView :loading="pending" type="skeleton">
-      <div>{{ data }}</div>
+      <div class="home-page__banner">
+        <img v-for="item in data.banner" :key="item.imgUrl" src="item.imgUrl" alt="">
+      </div>
+      <HomeTransformer :data="data.transformer" />
     </JLoadingView>
   </div>
 </template>

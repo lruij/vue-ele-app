@@ -14,11 +14,12 @@ export interface ISearchResult {
 }
 
 export interface IHomeInfo {
-  banner: IBanner
+  banner: IBanner[]
   searchRecomments: ISearchRecomment[]
   transformer: ITransformer[]
+  scrollBarInfoList: IScrollBarInfo[]
   countdown: ICountdown
-  activites: string[]
+  activities: string[]
 }
 
 export interface IBanner {
@@ -33,4 +34,9 @@ export interface ITransformer {
 export interface ICountdown {
   time: number
   goods: IGood
+}
+
+export interface ITransformer {
+  imgUrl: string
+  label: string
 }
