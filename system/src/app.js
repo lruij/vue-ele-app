@@ -40,6 +40,13 @@ router(server)
 
 // 路由路径配置
 const jsonRouter = jsonServer.router(db)
+
+// 设置延时返回
+server.use((req, res, next) => {
+  setTimeout(next, 1000)
+})
+
+// api 配置
 server.use('/api', jsonRouter)
 
 server.listen(8080, () => {
