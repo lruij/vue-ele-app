@@ -7,6 +7,8 @@ import { useAsync } from '@/use/useAsync'
 import { fetchHomePageData } from '@/api/home'
 import JLoadingView from '@/components/JLoadingView.vue'
 import HomeTransformer from './components/HomeTransformer.vue'
+import HomeScrollbar from './components/HomeScrollbar.vue'
+
 
 const recomments = [
   {
@@ -44,6 +46,7 @@ const { data, pending}  = useAsync(fetchHomePageData, {
         <img v-for="item in data.banner" :key="item.imgUrl" src="item.imgUrl" alt="">
       </div>
       <HomeTransformer :data="data.transformer" />
+      <HomeScrollbar :data="data.scrollBarInfoList" />
     </JLoadingView>
   </div>
 </template>

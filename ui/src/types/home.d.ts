@@ -40,3 +40,10 @@ export interface ITransformer {
   imgUrl: string
   label: string
 }
+
+export interface IScrollBarInfo {
+  type: string
+  badge: string
+  detail: string
+  btn: string
+}
